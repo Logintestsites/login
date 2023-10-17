@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<h2 id="green">Eingelogt</h2>
+
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+</style>
+<script>
+function hasCookie(cookieName) {
+    // Split den document.cookie-String in einzelne Cookies
+    var cookies = document.cookie.split(';');
+
+    // Durchsuche die Liste der Cookies, um das gewünschte Cookie zu finden
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith(cookieName + '=')) {
+            return true; // Das Cookie wurde gefunden
+        }
+    }
+
+    return false; // Das Cookie wurde nicht gefunden
+}
+
+// Beispiel: Überprüfen, ob das Cookie "loggedIn" vorhanden ist
+if (hasCookie("loggedIn")) {
+    // Das Cookie "loggedIn" ist vorhanden
+    // Führen Sie hier den Code für den eingeloggten Zustand aus
+} else {
+    //window.location = "nope.never"
+}
+    // Funktion zum Laden und Anzeigen des Dateiinhalts
+    function ladeUndZeigeDateiInhalt() {
+        fetch('nice.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('dateiInhalt').textContent = data;
+            })
+            .catch(error => {
+                console.error('Fehler beim Laden der Datei: ', error);
+            });
+    }
+
+    // Die Funktion beim Laden der Seite aufrufen
+    ladeUndZeigeDateiInhalt();
+    document.addEventListener("DOMContentLoaded", function () {
+    var greenText = document.getElementById("green");
+    greenText.style.color = "black";
+});
+
+
+</script>
+
