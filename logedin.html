@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Deine Seite</title>
+    <body>
+    <div id="content">
+        <h2 id="green">Eingelogt</h2>
+        <div class="container">
+            <h2>Webhook Nachricht senden</h2>
+            <input type="text" id="messageInput" placeholder="Nachricht eingeben">
+            <button id="sendMessageButton">Senden</button>
+        </div>
+        <div class="response-container">
+            <p id="responseMessage"></p>
+        </div>
+    </div>
+    <title>Eingelogt</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -57,23 +69,11 @@
         }
     </style>
 </head>
-<body>
-    <div id="content">
-        <div class="container">
-            <h2>Webhook Nachricht senden</h2>
-            <input type="text" id="messageInput" placeholder="Nachricht eingeben">
-            <button id="sendMessageButton">Senden</button>
-        </div>
-        <div class="response-container">
-            <p id="responseMessage"></p>
-        </div>
-    </div>
-    <h2 id="green">Eingelogt</h2>
     <script>
         function hasCookie(cookieName) {
             // Split den document.cookie-String in einzelne Cookies
             var cookies = document.cookie.split(';');
-    
+
             // Durchsuche die Liste der Cookies, um das gewünschte Cookie zu finden
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i].trim();
@@ -81,15 +81,15 @@
                     return true; // Das Cookie wurde gefunden
                 }
             }
-    
+
             return false; // Das Cookie wurde nicht gefunden
         }
-    
+
         // Beispiel: Überprüfen, ob das Cookie "loggedIn" vorhanden ist
         if (!hasCookie("loggedIn")) {
             window.location = "index.html";
         }
-    
+
         // Funktion zum Senden einer Nachricht an den Discord-Webhook
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("sendMessageButton").addEventListener("click", function () {
