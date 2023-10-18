@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
 <h2 id="green">Eingelogt</h2>
-
+    <div class="container">
+        <h1>Webhook Nachricht senden</h1>
+        <input type="text" id="messageInput" placeholder="Nachricht eingeben">
+        <button id="sendButton">Senden</button>
+    </div>
+    <div class="response-container">
+        <p id="responseMessage"></p>
+    </div>
 </html>
 <style>
     body {
@@ -10,6 +17,50 @@
     text-align: center;
     margin: 0;
     padding: 0;
+}
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.response-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#responseMessage {
+    font-weight: bold;
 }
 
 #content {
@@ -64,6 +115,18 @@ if (hasCookie("loggedIn")) {
     greenText.style.color = "black";
 });
 
+    document.addEventListener("DOMContentLoaded", function () {
+    const messageInput = document.getElementById("messageInput");
+    const sendButton = document.getElementById("sendButton");
+    const responseMessage = document.getElementById("responseMessage");
 
+    sendButton.addEventListener("click", function () {
+        const message = messageInput.value;
+        // Hier kannst du deinen Code zum Senden der Nachricht an den Webhook einfügen.
+
+        // Beispiel: Anzeige der gesendeten Nachricht in der Antwort.
+        responseMessage.textContent = `Nachricht gesendet: ${message}`;
+    });
+});
 </script>
 
