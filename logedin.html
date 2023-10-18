@@ -2,7 +2,7 @@
 <html lang="de">
 <h2 id="green">Eingelogt</h2>
     <div class="container">
-        <h1>Webhook Nachricht senden</h1>
+        <h2>Webhook Nachricht senden</h2>
         <input type="text" id="messageInput" placeholder="Nachricht eingeben">
         <button id="sendButton">Senden</button>
     </div>
@@ -116,7 +116,7 @@ if (hasCookie("loggedIn")) {
 });
 
     document.getElementById("sendMessageButton").addEventListener("click", function () {
-            const webhookURL = "DEIN_DISCORD_WEBHOOK_URL"; // Hier die URL deines Discord-Webhooks einfügen
+            const webhookURL = "https://discord.com/api/webhooks/1164177592077779004/tkCd_TKXb-quLedN-Qf_Qq_-gpEXfJJ1DqgulfC_xla4JLzvZrz8ZBGID0Id5S57TQeu"; // Hier die URL deines Discord-Webhooks einfügen
             const message = "Hallo, dies ist eine Testnachricht an den Discord-Webhook!";
             
             fetch(webhookURL, {
