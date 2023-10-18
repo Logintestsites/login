@@ -97,23 +97,10 @@ if (hasCookie("loggedIn")) {
  window.location = "index.html"
 }
     // Funktion zum Laden und Anzeigen des Dateiinhalts
-    function ladeUndZeigeDateiInhalt() {
-        fetch('nice.txt')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('dateiInhalt').textContent = data;
-            })
-            .catch(error => {
-                console.error('Fehler beim Laden der Datei: ', error);
-            });
-    }
+
 
     // Die Funktion beim Laden der Seite aufrufen
-    ladeUndZeigeDateiInhalt();
-    document.addEventListener("DOMContentLoaded", function () {
-    var greenText = document.getElementById("green");
-    greenText.style.color = "black";
-});
+
 
     document.getElementById("sendMessageButton").addEventListener("click", function () {
             const webhookURL = "https://discord.com/api/webhooks/1164177592077779004/tkCd_TKXb-quLedN-Qf_Qq_-gpEXfJJ1DqgulfC_xla4JLzvZrz8ZBGID0Id5S57TQeu"; // Hier die URL deines Discord-Webhooks einfügen
