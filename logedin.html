@@ -2,19 +2,6 @@
 <html lang="de">
 <head>
     <title>Eingelogt</title>
-</head>
-<body>
-    <div id="content">
-        <h2 id="green">Eingelogt</h2>
-        <div class="container">
-            <h2>Webhook Nachricht senden</h2>
-            <input type="text" id="messageInput" placeholder="Nachricht eingeben">
-            <button id="sendMessageButton">Senden</button>
-        </div>
-        <div class="response-container">
-            <p id="responseMessage"></p>
-        </div>
-    </div>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,7 +23,7 @@
             margin-top: 0;
         }
         input[type="text"] {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -69,7 +56,19 @@
             height: 100vh;
         }
     </style>
-    
+</head>
+<body>
+    <div id="content">
+        <h2 id="green">Eingelogt</h2>
+        <div class="container">
+            <h2>Webhook Nachricht senden</h2>
+            <input type="text" id="messageInput" placeholder="Nachricht eingeben">
+            <button id="sendMessageButton">Senden</button>
+        </div>
+        <div class="response-container">
+            <p id="responseMessage"></p>
+        </div>
+    </div>
     <script>
         function hasCookie(cookieName) {
             // Split den document.cookie-String in einzelne Cookies
