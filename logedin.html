@@ -115,18 +115,27 @@ if (hasCookie("loggedIn")) {
     greenText.style.color = "black";
 });
 
-    document.addEventListener("DOMContentLoaded", function () {
-    const messageInput = document.getElementById("messageInput");
-    const sendButton = document.getElementById("sendButton");
-    const responseMessage = document.getElementById("responseMessage");
-
-    sendButton.addEventListener("click", function () {
-        const message = messageInput.value;
-        // Hier kannst du deinen Code zum Senden der Nachricht an den Webhook einfügen.
-
-        // Beispiel: Anzeige der gesendeten Nachricht in der Antwort.
-        responseMessage.textContent = `Nachricht gesendet: ${message}`;
-    });
-});
+    document.getElementById("sendMessageButton").addEventListener("click", function () {
+            const webhookURL = "DEIN_DISCORD_WEBHOOK_URL"; // Hier die URL deines Discord-Webhooks einfügen
+            const message = "Hallo, dies ist eine Testnachricht an den Discord-Webhook!";
+            
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ content: message }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Nachricht erfolgreich an Discord gesendet.');
+                } else {
+                    console.error('Fehler beim Senden der Nachricht an Discord.');
+                }
+            })
+            .catch(error => {
+                console.error('Fehler beim Senden der Nachricht an Discord: ', error);
+            });
+        });
 </script>
 
