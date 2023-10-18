@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <body>
+    <title>Eingelogt</title>
+</head>
+<body>
     <div id="content">
         <h2 id="green">Eingelogt</h2>
         <div class="container">
@@ -13,7 +15,6 @@
             <p id="responseMessage"></p>
         </div>
     </div>
-    <title>Eingelogt</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,7 +31,7 @@
             width: 300px;
             margin: 20px auto;
         }
-        h1 {
+        h2 {
             text-align: center;
             margin-top: 0;
         }
@@ -68,7 +69,7 @@
             height: 100vh;
         }
     </style>
-</head>
+    
     <script>
         function hasCookie(cookieName) {
             // Split den document.cookie-String in einzelne Cookies
@@ -93,7 +94,7 @@
         // Funktion zum Senden einer Nachricht an den Discord-Webhook
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("sendMessageButton").addEventListener("click", function () {
-                const webhookURL = "https://discord.com/api/webhooks/1164177592077779004/tkCd_TKXb-quLedN-Qf_Qq_-gpEXfJJ1DqgulfC_xla4JLzvZrz8ZBGID0Id5S57TQeu"; // Hier die URL deines Discord-Webhooks einfügen
+                const webhookURL = "https://discord.com/api/webhooks/1164177592077779004/tkCd_TKXB-quLedN-Qf_Qq_-gpEXfJJ1DqgulfC_xla4JLzvZrz8ZBGID0Id5S57TQeu"; // Hier die URL deines Discord-Webhooks einfügen
                 const messageInput = document.getElementById("messageInput");
                 const message = messageInput.value;
                 
