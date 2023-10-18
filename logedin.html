@@ -2,13 +2,13 @@
 <html lang="de">
 <head>
     <title>Deine Seite</title>
-   <style>
-        #content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Änderung hier: flex-start anstelle von center */
-            height: 100vh;
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
         }
         .container {
             background-color: #fff;
@@ -59,7 +59,6 @@
 </head>
 <body>
     <div id="content">
-        <h2 id="green">Eingelogt</h2>
         <div class="container">
             <h2>Webhook Nachricht senden</h2>
             <input type="text" id="messageInput" placeholder="Nachricht eingeben">
@@ -69,11 +68,12 @@
             <p id="responseMessage"></p>
         </div>
     </div>
+    <h2 id="green">Eingelogt</h2>
     <script>
         function hasCookie(cookieName) {
             // Split den document.cookie-String in einzelne Cookies
             var cookies = document.cookie.split(';');
-
+    
             // Durchsuche die Liste der Cookies, um das gewünschte Cookie zu finden
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i].trim();
@@ -81,15 +81,15 @@
                     return true; // Das Cookie wurde gefunden
                 }
             }
-
+    
             return false; // Das Cookie wurde nicht gefunden
         }
-
+    
         // Beispiel: Überprüfen, ob das Cookie "loggedIn" vorhanden ist
         if (!hasCookie("loggedIn")) {
             window.location = "index.html";
         }
-
+    
         // Funktion zum Senden einer Nachricht an den Discord-Webhook
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("sendMessageButton").addEventListener("click", function () {
