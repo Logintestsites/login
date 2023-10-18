@@ -58,7 +58,7 @@
         // Funktion, die aufgerufen wird, wenn der "Cookie löschen"-Button geklickt wird
         document.getElementById('deleteCookieButton').addEventListener('click', function () {
             var cookieNameToDelete = 'loggedIn'; // Den zu löschenden Cookie-Namen hier angeben
-
+            window.location = "index.html"
             if (hasCookie(cookieNameToDelete)) {
                 deleteCookie(cookieNameToDelete);
                 alert('Cookie wurde gelöscht.');
