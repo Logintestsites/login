@@ -37,9 +37,36 @@
 <body>
     <h2 id="green">Test</h2>
     <button id="deleteCookieButton">Cookie löschen</button>
-
     <script>
-        // JavaScript-Code bleibt unverändert
+        // Funktion zum Überprüfen, ob ein Cookie vorhanden ist
+        function hasCookie(cookieName) {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith(cookieName + '=')) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Funktion zum Löschen eines Cookies
+        function deleteCookie(cookieName) {
+            document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        }
+
+        // Funktion, die aufgerufen wird, wenn der "Cookie löschen"-Button geklickt wird
+        document.getElementById('deleteCookieButton').addEventListener('click', function () {
+            var cookieNameToDelete = 'loggedIn'; // Den zu löschenden Cookie-Namen hier angeben
+
+            if (hasCookie(cookieNameToDelete)) {
+                deleteCookie(cookieNameToDelete);
+                alert('Cookie wurde gelöscht.');
+            } else {
+                alert('Cookie wurde nicht gefunden.');
+            }
+        });
     </script>
+
 </body>
 </html>
