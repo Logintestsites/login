@@ -18,24 +18,17 @@
             margin-top: 20px;
             color: #555;
         }
-      .menu-container {
-            position: fixed;
-            top: 0;
-            left: -150px; /* Menü ist standardmäßig ausgeblendet */
-            height: 100%;
-            width: 150px;
-            background-color: #333;
-            transition: left 0.3s;
-        }
-
-        .menu-container:hover {
-            left: 0; /* Menü erscheint beim Hover-Effekt */
-        }
-
-        ul.menu {
+            ul.menu {
             list-style-type: none;
             padding: 0;
             margin: 0;
+            background-color: #333;
+            width: 50px; /* Anfangsbreite des Menüs */
+            transition: width 0.3s;
+        }
+
+        ul.menu:hover {
+            width: 150px; /* Breite des Menüs im ausgeklappten Zustand */
         }
 
         ul.menu li {
