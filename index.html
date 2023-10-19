@@ -18,49 +18,7 @@
             margin-top: 20px;
             color: #555;
         }
-           .menu-wrapper {
-            position: fixed;
-            top: 0;
-            left: -200px; /* Das Menü ist standardmäßig ausgeblendet */
-            background-color: #007bff;
-            width: 200px;
-            height: 100%;
-            transition: left 0.3s;
-        }
-
-        .menu-label {
-            cursor: pointer;
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 2;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-        }
-
-        .menu-label:hover + .menu-wrapper {
-            left: 0; /* Das Menü wird ausgeklappt, wenn über das Label gehovert wird */
-        }
-
-        ul.menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            color: #fff;
-        }
-
-        ul.menu li {
-            margin-bottom: 10px;
-        }
-
-        ul.menu li a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #fff;
-        }
+           
         
         /* Neuer CSS-Stil für das Menü */
     #loginForm {
@@ -114,11 +72,6 @@
     }
 </style>
 <body>
-    <div class="menu-label">☰</div>
-    <ul class="menu">
-        <li><a href="unterseite1.html">Unterseite 1</a></li>
-        <li><a href="unterseite2.html">Unterseite 2</a></li>
-    </ul>
     <h2>Login</h2>
     <form id="loginForm" onsubmit="validateForm(); return false;">
         <label for="username">Benutzername:</label>
