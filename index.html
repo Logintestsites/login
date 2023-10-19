@@ -26,24 +26,17 @@
         .menu-label {
             cursor: pointer;
             position: fixed;
-            top: 0;
-            left: -50px; /* Das Menü ist standardmäßig ausgeblendet */
+            top: 10px;
+            left: 10px;
             z-index: 1;
             background-color: #007bff;
             color: #fff;
             padding: 10px;
-            border-radius: 0 50% 50% 0;
-            transition: left 0.3s;
+            border-radius: 50%;
         }
 
-        .menu-label:hover {
-            left: 0; /* Das Menü wird ausgeklappt, wenn über das Label gehovert wird */
-        }
-
-        .menu-label::after {
-            content: "☰ Menü";
-            position: absolute;
-            left: 30px;
+        .menu-label:hover + ul.menu {
+            width: 200px; /* Das Menü wird ausgeklappt, wenn über das Label gehovert wird */
         }
 
         ul.menu {
@@ -51,18 +44,14 @@
             padding: 0;
             margin: 0;
             background-color: #007bff;
-            width: 0; /* Anfangsbreite des Menüs */
+            width: 50px; /* Anfangsbreite des Menüs */
             position: fixed;
             top: 0;
-            left: 0;
+            left: -150px; /* Das Menü ist standardmäßig ausgeblendet */
             height: 100%;
             overflow: hidden;
             color: #fff;
-            transition: width 0.3s;
-        }
-
-        ul.menu:hover {
-            width: 200px; /* Das Menü wird ausgeklappt, wenn darüber gehovert wird */
+            transition: left 0.3s;
         }
 
         ul.menu li {
@@ -128,7 +117,7 @@
     }
 </style>
 <body>
-    <div class="menu-label"></div>
+    <div class="menu-label">☰</div>
     <ul class="menu">
         <li><a href="unterseite1.html">Unterseite 1</a></li>
         <li><a href="unterseite2.html">Unterseite 2</a></li>
