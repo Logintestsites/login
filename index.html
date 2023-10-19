@@ -18,40 +18,37 @@
             margin-top: 20px;
             color: #555;
         }
-           .menu-toggle {
-            display: none;
+           .menu-wrapper {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Das Menü ist standardmäßig ausgeblendet */
+            background-color: #007bff;
+            width: 200px;
+            height: 100%;
+            transition: left 0.3s;
         }
 
-        /* Neuer CSS-Stil für das Menü */
         .menu-label {
             cursor: pointer;
             position: fixed;
             top: 10px;
             left: 10px;
-            z-index: 1;
+            z-index: 2;
             background-color: #007bff;
             color: #fff;
             padding: 10px;
             border-radius: 50%;
         }
 
-        .menu-label:hover + ul.menu {
-            width: 200px; /* Das Menü wird ausgeklappt, wenn über das Label gehovert wird */
+        .menu-label:hover + .menu-wrapper {
+            left: 0; /* Das Menü wird ausgeklappt, wenn über das Label gehovert wird */
         }
 
         ul.menu {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            background-color: #007bff;
-            width: 50px; /* Anfangsbreite des Menüs */
-            position: fixed;
-            top: 0;
-            left: -150px; /* Das Menü ist standardmäßig ausgeblendet */
-            height: 100%;
-            overflow: hidden;
             color: #fff;
-            transition: left 0.3s;
         }
 
         ul.menu li {
