@@ -18,17 +18,24 @@
             margin-top: 20px;
             color: #555;
         }
-            .menu-toggle {
-            display: none;
-        }
-
-        .menu-toggle {
+           .menu-toggle {
             display: none;
         }
 
         .menu-label {
-            display: none;
             cursor: pointer;
+            position: fixed;
+            top: 0;
+            left: 10px;
+            z-index: 1;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 0 50% 50% 0;
+        }
+
+        .menu-toggle:checked + .menu-label::after {
+            content: "☰ Menü";
         }
 
         ul.menu {
@@ -40,7 +47,7 @@
             transition: width 0.3s;
             position: fixed;
             top: 0;
-            left: 0;
+            left: -50px; /* Das Menü ist standardmäßig ausgeblendet */
             height: 100%;
             overflow: hidden;
             color: #fff;
