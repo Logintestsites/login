@@ -22,11 +22,20 @@
             display: none;
         }
 
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-label {
+            display: none;
+            cursor: pointer;
+        }
+
         ul.menu {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            background-color: #333;
+            background-color: #007bff;
             width: 50px; /* Anfangsbreite des Menüs */
             transition: width 0.3s;
             position: fixed;
@@ -34,9 +43,10 @@
             left: 0;
             height: 100%;
             overflow: hidden;
+            color: #fff;
         }
 
-        .menu-toggle:hover + ul.menu, ul.menu:hover {
+        .menu-toggle:checked + .menu-label + ul.menu {
             width: 200px; /* Breite des Menüs im ausgeklappten Zustand */
         }
 
