@@ -18,9 +18,36 @@
             margin-top: 20px;
             color: #555;
         }
+            ul.menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: hidden;
+            transition: width 0.3s;
+        }
+
+        ul.menu:hover {
+            width: 150px; /* Breite des Menüs im ausgeklappten Zustand */
+        }
+
+        ul.menu li {
+            margin-bottom: 10px;
+        }
+
+        ul.menu li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
 
         /* Neuer CSS-Stil für das Menü */
-    https://regiomontanus-gymnasium.de/hackingChallenges.zip
     #loginForm {
         background-color: #fff;
         max-width: 300px;
