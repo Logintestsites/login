@@ -26,16 +26,23 @@
             cursor: pointer;
             position: fixed;
             top: 0;
-            left: 10px;
+            left: -50px; /* Das Menü ist standardmäßig ausgeblendet */
             z-index: 1;
             background-color: #007bff;
             color: #fff;
             padding: 10px;
             border-radius: 0 50% 50% 0;
+            transition: left 0.3s;
         }
 
-        .menu-toggle:checked + .menu-label::after {
+        .menu-label:hover {
+            left: 0; /* Das Menü wird ausgeklappt, wenn über das Label gehovert wird */
+        }
+
+        .menu-label::after {
             content: "☰ Menü";
+            position: absolute;
+            left: 30px;
         }
 
         ul.menu {
@@ -44,17 +51,17 @@
             margin: 0;
             background-color: #007bff;
             width: 50px; /* Anfangsbreite des Menüs */
-            transition: width 0.3s;
             position: fixed;
             top: 0;
             left: -50px; /* Das Menü ist standardmäßig ausgeblendet */
             height: 100%;
             overflow: hidden;
             color: #fff;
+            transition: left 0.3s;
         }
 
-        .menu-toggle:checked + .menu-label + ul.menu {
-            width: 200px; /* Breite des Menüs im ausgeklappten Zustand */
+        ul.menu:hover {
+            left: 0; /* Das Menü wird ausgeklappt, wenn darüber gehovert wird */
         }
 
         ul.menu li {
@@ -67,6 +74,7 @@
             text-decoration: none;
             color: #fff;
         }
+        
         /* Neuer CSS-Stil für das Menü */
     #loginForm {
         background-color: #fff;
@@ -119,8 +127,7 @@
     }
 </style>
 <body>
-    <input type="checkbox" class="menu-toggle" id="menu-toggle">
-    <label for="menu-toggle">☰</label>
+    <div class="menu-label"></div>
     <ul class="menu">
         <li><a href="unterseite1.html">Unterseite 1</a></li>
         <li><a href="unterseite2.html">Unterseite 2</a></li>
