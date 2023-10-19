@@ -18,17 +18,26 @@
             margin-top: 20px;
             color: #555;
         }
-            ul.menu {
+           .menu-toggle {
+            display: none;
+        }
+
+        ul.menu {
             list-style-type: none;
             padding: 0;
             margin: 0;
             background-color: #333;
-            width: 50px; /* Anfangsbreite des Menüs */
+            width: 0;
             transition: width 0.3s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: hidden;
         }
 
         ul.menu:hover {
-            width: 150px; /* Breite des Menüs im ausgeklappten Zustand */
+            width: 200px; /* Breite des Menüs im ausgeklappten Zustand */
         }
 
         ul.menu li {
@@ -41,7 +50,6 @@
             text-decoration: none;
             color: #fff;
         }
-
         /* Neuer CSS-Stil für das Menü */
     #loginForm {
         background-color: #fff;
@@ -94,6 +102,8 @@
     }
 </style>
 <body>
+    <input type="checkbox" class="menu-toggle" id="menu-toggle">
+    <label for="menu-toggle">☰</label>
     <ul class="menu">
         <li><a href="unterseite1.html">Unterseite 1</a></li>
         <li><a href="unterseite2.html">Unterseite 2</a></li>
