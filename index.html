@@ -22,6 +22,7 @@
             display: none;
         }
 
+        /* Neuer CSS-Stil für das Menü */
         .menu-label {
             cursor: pointer;
             position: fixed;
@@ -50,18 +51,18 @@
             padding: 0;
             margin: 0;
             background-color: #007bff;
-            width: 50px; /* Anfangsbreite des Menüs */
+            width: 0; /* Anfangsbreite des Menüs */
             position: fixed;
             top: 0;
-            left: -50px; /* Das Menü ist standardmäßig ausgeblendet */
+            left: 0;
             height: 100%;
             overflow: hidden;
             color: #fff;
-            transition: left 0.3s;
+            transition: width 0.3s;
         }
 
         ul.menu:hover {
-            left: 0; /* Das Menü wird ausgeklappt, wenn darüber gehovert wird */
+            width: 200px; /* Das Menü wird ausgeklappt, wenn darüber gehovert wird */
         }
 
         ul.menu li {
