@@ -101,11 +101,7 @@ function getRandomInt(max) {
     return Math.round(Math.floor(Math.random() * max));
 }
 var number = getRandomInt(10); // Declare and assign number variable
-if (number == 1) {
-    myname = "cool"; // Assign string value "cool" to myname if number equals 1
-}else{
-    myname = "1";
-}
+myname = number.toString
 document.write("<button id='button' type='button' onclick='mytest(\"" + myname + "\")'>[TEST]</button>"); // Pass myname as a string to mytest function
 
             
